@@ -1,0 +1,1164 @@
+{
+	"Notes": [
+		{
+			"Paper": 117,
+			"Section": 0,
+			"Paragraph": 0,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2022-07-27T21:18:14.060",
+			"Status": 1,
+			"Format": 1
+		},
+		{
+			"Paper": 117,
+			"Section": 0,
+			"Paragraph": 1,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-21T17:10:41.420",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 0,
+			"Paragraph": 2,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-22T01:25:35.850",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 0,
+			"Paragraph": 3,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-22T01:50:13.303",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 0,
+			"Paragraph": 4,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-22T02:07:25.250",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 1,
+			"Paragraph": 0,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-22T02:11:02.967",
+			"Status": 1,
+			"Format": 2
+		},
+		{
+			"Paper": 117,
+			"Section": 1,
+			"Paragraph": 1,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-22T02:36:30.310",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 1,
+			"Paragraph": 2,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-22T05:11:10.060",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 1,
+			"Paragraph": 3,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-22T05:21:59.523",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 1,
+			"Paragraph": 4,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-22T06:33:20.817",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 1,
+			"Paragraph": 5,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-26T20:45:29.100",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 1,
+			"Paragraph": 6,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-26T21:16:21.413",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 1,
+			"Paragraph": 7,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-26T21:41:53.263",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 1,
+			"Paragraph": 8,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-26T21:45:20.073",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 1,
+			"Paragraph": 9,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-27T15:06:47.877",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 2,
+			"Paragraph": 0,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-27T19:57:17.390",
+			"Status": 1,
+			"Format": 2
+		},
+		{
+			"Paper": 117,
+			"Section": 2,
+			"Paragraph": 1,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-27T20:14:13.680",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 2,
+			"Paragraph": 2,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-27T20:38:24.687",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 2,
+			"Paragraph": 3,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-01T18:35:02.383",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 2,
+			"Paragraph": 4,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-28T16:22:52.390",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 2,
+			"Paragraph": 5,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-28T19:34:47.640",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 2,
+			"Paragraph": 6,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-28T19:52:25.623",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 2,
+			"Paragraph": 7,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-28T20:05:17.597",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 2,
+			"Paragraph": 8,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-28T20:14:32.037",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 2,
+			"Paragraph": 9,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-28T20:41:33.247",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 3,
+			"Paragraph": 0,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-28T20:44:37.167",
+			"Status": 1,
+			"Format": 2
+		},
+		{
+			"Paper": 117,
+			"Section": 3,
+			"Paragraph": 1,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-28T20:56:16.437",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 3,
+			"Paragraph": 2,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-28T21:07:20.993",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 3,
+			"Paragraph": 3,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-11-30T18:52:28.100",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 3,
+			"Paragraph": 4,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-01T19:58:24.613",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 3,
+			"Paragraph": 5,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-01T20:09:04.493",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 3,
+			"Paragraph": 6,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-01T20:21:23.707",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 3,
+			"Paragraph": 7,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-02T09:08:33.283",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 3,
+			"Paragraph": 8,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-12T00:42:58.327",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 3,
+			"Paragraph": 9,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-12T01:01:44.790",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 3,
+			"Paragraph": 10,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-12T22:07:32.863",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 3,
+			"Paragraph": 11,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-13T08:00:46.130",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 3,
+			"Paragraph": 12,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-13T08:18:25.583",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 3,
+			"Paragraph": 13,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-13T08:35:26.803",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 4,
+			"Paragraph": 0,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-13T08:35:54.290",
+			"Status": 1,
+			"Format": 2
+		},
+		{
+			"Paper": 117,
+			"Section": 4,
+			"Paragraph": 1,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-13T12:08:52.760",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 4,
+			"Paragraph": 2,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-13T13:10:33.333",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 4,
+			"Paragraph": 3,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-13T13:37:34.530",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 4,
+			"Paragraph": 4,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-13T14:21:57.710",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 4,
+			"Paragraph": 5,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-13T20:10:47.180",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 4,
+			"Paragraph": 6,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-13T20:30:34.940",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 4,
+			"Paragraph": 7,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-13T20:42:10.590",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 4,
+			"Paragraph": 8,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-13T21:16:11.553",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 4,
+			"Paragraph": 9,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-13T22:03:00.470",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 4,
+			"Paragraph": 10,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-14T15:06:05.010",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 4,
+			"Paragraph": 11,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-14T20:40:02.020",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 4,
+			"Paragraph": 12,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-14T20:54:24.390",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 4,
+			"Paragraph": 13,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-15T11:50:35.950",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 4,
+			"Paragraph": 14,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-15T12:22:38.850",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 5,
+			"Paragraph": 0,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-15T12:26:07.090",
+			"Status": 1,
+			"Format": 2
+		},
+		{
+			"Paper": 117,
+			"Section": 5,
+			"Paragraph": 1,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-15T13:13:11.620",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 5,
+			"Paragraph": 2,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-15T20:03:38.320",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 5,
+			"Paragraph": 3,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-15T20:58:53.293",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 5,
+			"Paragraph": 4,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-15T21:06:16.510",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 5,
+			"Paragraph": 5,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-15T21:12:24.817",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 5,
+			"Paragraph": 6,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-15T21:19:41.680",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 5,
+			"Paragraph": 7,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-15T22:15:57.013",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 5,
+			"Paragraph": 8,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-15T22:22:41.967",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 5,
+			"Paragraph": 9,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-17T19:09:05.680",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 5,
+			"Paragraph": 10,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-17T19:39:06.973",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 5,
+			"Paragraph": 11,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-17T20:42:03.873",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 5,
+			"Paragraph": 12,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-17T20:46:33.123",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 5,
+			"Paragraph": 13,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-18T14:33:14.113",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 5,
+			"Paragraph": 14,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-18T21:18:57.150",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 0,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-18T21:19:26.540",
+			"Status": 1,
+			"Format": 2
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 1,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-19T18:48:46.527",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 2,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-19T19:01:46.650",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 3,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-19T19:21:39.793",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 4,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-19T19:34:21.620",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 5,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-19T19:55:59.120",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 6,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-19T20:28:41.043",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 7,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-20T00:29:20.893",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 8,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-20T01:01:43.220",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 9,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-20T08:31:20.600",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 10,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-20T08:51:41.383",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 11,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-20T09:02:26.273",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 12,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-20T09:13:01.240",
+			"Status": 1,
+			"Format": 4
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 13,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-20T09:28:44.973",
+			"Status": 1,
+			"Format": 4
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 14,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-20T12:18:36.147",
+			"Status": 1,
+			"Format": 4
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 15,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-20T12:28:58.807",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 16,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-20T12:39:33.893",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 17,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-20T12:48:30.617",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 18,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-20T21:10:32.627",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 19,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-20T21:17:16.347",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 20,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-21T19:40:22.333",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 21,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-21T19:49:59.200",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 22,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-21T20:01:23.890",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 23,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-21T20:09:54.400",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 24,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-22T17:00:17.473",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 25,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-22T17:11:41.527",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 26,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-22T17:16:01.020",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 6,
+			"Paragraph": 27,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-22T17:37:13.777",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 7,
+			"Paragraph": 0,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-22T17:37:44.790",
+			"Status": 1,
+			"Format": 2
+		},
+		{
+			"Paper": 117,
+			"Section": 7,
+			"Paragraph": 1,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-22T18:36:27.033",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 7,
+			"Paragraph": 2,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-22T18:40:02.110",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 7,
+			"Paragraph": 3,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-22T18:45:30.813",
+			"Status": 1,
+			"Format": 4
+		},
+		{
+			"Paper": 117,
+			"Section": 7,
+			"Paragraph": 4,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-22T18:54:36.840",
+			"Status": 1,
+			"Format": 4
+		},
+		{
+			"Paper": 117,
+			"Section": 7,
+			"Paragraph": 5,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-22T19:18:19.523",
+			"Status": 1,
+			"Format": 4
+		},
+		{
+			"Paper": 117,
+			"Section": 7,
+			"Paragraph": 6,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-22T20:02:18.040",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 7,
+			"Paragraph": 7,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-22T20:37:55.180",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 7,
+			"Paragraph": 8,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-22T20:39:43.817",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 7,
+			"Paragraph": 9,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-22T20:40:21.880",
+			"Status": 1,
+			"Format": 4
+		},
+		{
+			"Paper": 117,
+			"Section": 7,
+			"Paragraph": 10,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-22T20:42:40.300",
+			"Status": 1,
+			"Format": 4
+		},
+		{
+			"Paper": 117,
+			"Section": 7,
+			"Paragraph": 11,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-22T20:47:12.810",
+			"Status": 1,
+			"Format": 4
+		},
+		{
+			"Paper": 117,
+			"Section": 7,
+			"Paragraph": 12,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-22T20:56:57.143",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 7,
+			"Paragraph": 13,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-23T08:30:26.953",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 7,
+			"Paragraph": 14,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-23T08:56:28.023",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 7,
+			"Paragraph": 15,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-23T09:07:27.227",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 7,
+			"Paragraph": 16,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-23T09:18:59.263",
+			"Status": 1,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 7,
+			"Paragraph": 17,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-25T13:12:26.197",
+			"Status": 3,
+			"Format": 3
+		},
+		{
+			"Paper": 117,
+			"Section": 7,
+			"Paragraph": 18,
+			"TranslatorNote": "",
+			"Notes": "",
+			"LastDate": "2013-12-24T19:54:20.963",
+			"Status": 1,
+			"Format": 3
+		}
+	]
+}
