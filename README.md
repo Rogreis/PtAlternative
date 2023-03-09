@@ -24,27 +24,30 @@ Para **clonar** um repositório Git existem alguns pré requisitos:
 
 1. Estar inscrito neste respositório como colaborador.
 2. Conhecimento prévio mínimo do aplicativo git
-3. Instalar, se ainda não tem, este aplicativo git. Pode obtê-lo aqui:  `https://github.com/git-guides/install-git`
+3. Instalar, se ainda não tem, este aplicativo git. Pode obtê-lo aqui:  <pre>https://github.com/git-guides/install-git</pre>
 4. Possuir algum tipo de terminal (prompt de comandos, powershell ou bash) instalado em seu computador com o git disponível no PATH.
 
 Para saber se o git está instalado e configurado corretamente no PATH:
 1. Abra o terminal
-2. Digite o comando: `git -v`
+2. Digite o comando: <pre>git -v</pre>
 3. Deve corretamente indicar a versão do git instalada.
 
 Processo de clonagem:
 1. Crie um diretório e abra o terminal nele.
-2. Use o git para clonar: `git clone https://github.com/Rogreis/PtAlternative.git`
-3. Navegue até o diretório do repositório recém-clonado: `cd PtAlternative`
-4. Entre no branch "correcoes" onde se permite o envio de colaborações: `git checkout -b correcoes origin/correcoes`
+2. Use o git para clonar: <pre>git clone https://github.com/Rogreis/PtAlternative.git</pre>
+3. Navegue até o diretório do repositório recém-clonado: <pre>cd PtAlternative</pre>
+4. Entre no branch "correcoes" onde se permite o envio de colaborações: <pre>git checkout -b correcoes origin/correcoes</pre>
 5. Use seu editor de textos favorito ou mesmo um específico para markdown e modifique os parágrafos que deseje.
+6. Para atualizar os dados e receber as últimas alterações feitas e ainda não presentes em seu repositório local, ude: <pre>git pull</pre>
 
 
 Ao final, de novo no terminal e estando no diretório onde clonou o respositório (PtAlternative):
 
-`git add .`
-`git commit -m "uma mensagem curta identificando o que fez"`
-`git push`
+<pre>
+git add .
+git commit -m "uma mensagem curta identificando o que fez"
+git push
+</pre>
 
 Observação: se foram alterados diversos parágrafos, a mensagem acima vai ser associada a todos eles. É importante sintetizar bem o que foi feito, por exemplo:
 
@@ -52,7 +55,7 @@ Observação: se foram alterados diversos parágrafos, a mensagem acima vai ser 
         Mudança de Espírito Materno para Espírito Mãe
         Sugestão para melhor entendimento
   
-Para maiores instruções sobre o git: `https://www.w3schools.com/git/`  (em inglês)
+Para maiores instruções sobre o git (em inglês): <pre>https://www.w3schools.com/git/</pre>
   
 
 #### Ocorrências de superscript no texto (nesta revisão representados como bold):
