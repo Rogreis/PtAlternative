@@ -49,7 +49,7 @@ Ao final, de novo no terminal e estando no diretório onde clonou o respositóri
 Observação: se foram alterados diversos parágrafos, a mensagem acima vai ser associada a todos eles. É importante sintetizar bem o que foi feito, por exemplo:
 
         Correção do tempo do verbo
-        Mudança de Espírito Materno para Espírito Mãe
+        Mudança de Espírito Mãe para Espírito Mãe
         Sugestão para melhor entendimento
   
 Para maiores instruções sobre o git: `https://www.w3schools.com/git/`  (em inglês)
