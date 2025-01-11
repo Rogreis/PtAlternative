@@ -6519,14 +6519,14 @@
         "PaperNo": 91,
         "SectionNo": 0,
         "ParagraphNo": 0,
-        "text": "91 - A Evolu\u00E7\u00E3o da Prece",
+        "text": "91 - A Evolu\u00E7\u00E3o da Ora\u00E7\u00E3o",
         "expanded": true,
         "nodes": [
           {
             "PaperNo": 91,
             "SectionNo": 1,
             "ParagraphNo": 0,
-            "text": "1. A Prece Primitiva",
+            "text": "1. A Ora\u00E7\u00E3o Primitiva",
             "expanded": false,
             "nodes": []
           },
@@ -6534,7 +6534,7 @@
             "PaperNo": 91,
             "SectionNo": 2,
             "ParagraphNo": 0,
-            "text": "2. A Prece em Evolu\u00E7\u00E3o",
+            "text": "2. A Ora\u00E7\u00E3o em Evolu\u00E7\u00E3o",
             "expanded": false,
             "nodes": []
           },
@@ -6582,7 +6582,7 @@
             "PaperNo": 91,
             "SectionNo": 8,
             "ParagraphNo": 0,
-            "text": "8. A Prece como uma Experi\u00EAncia Pessoal",
+            "text": "8. A Ora\u00E7\u00E3o como uma Experi\u00EAncia Pessoal",
             "expanded": false,
             "nodes": []
           },
@@ -6590,7 +6590,7 @@
             "PaperNo": 91,
             "SectionNo": 9,
             "ParagraphNo": 0,
-            "text": "9. Condi\u00E7\u00F5es da Prece Eficaz",
+            "text": "9. Condi\u00E7\u00F5es da Ora\u00E7\u00E3o Eficaz",
             "expanded": false,
             "nodes": []
           }
@@ -10348,7 +10348,7 @@
             "PaperNo": 144,
             "SectionNo": 3,
             "ParagraphNo": 0,
-            "text": "3. A Prece do Crente",
+            "text": "3. A Ora\u00E7\u00E3o do Crente",
             "expanded": false,
             "nodes": []
           },
@@ -11844,7 +11844,7 @@
             "PaperNo": 168,
             "SectionNo": 4,
             "ParagraphNo": 0,
-            "text": "4. A Resposta \u00E0 Prece",
+            "text": "4. A Resposta \u00E0 Ora\u00E7\u00E3o",
             "expanded": false,
             "nodes": []
           },
@@ -12474,7 +12474,7 @@
             "PaperNo": 182,
             "SectionNo": 1,
             "ParagraphNo": 0,
-            "text": "1. A \u00DAltima Prece do Grupo",
+            "text": "1. A \u00DAltima Ora\u00E7\u00E3o do Grupo",
             "expanded": false,
             "nodes": []
           },
