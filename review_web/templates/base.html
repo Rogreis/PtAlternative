@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}PtAlternative Review{% endblock %}</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="/dashboard">
+        <span class="brand-mark">PtA</span>
+        <span class="brand-text">
+          <strong>PtAlternative Review</strong>
+          <small>FastAPI local para revisão por parágrafo</small>
+        </span>
+      </a>
+      <nav class="topbar-nav">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/paragraph/0/0/0">Abrir início</a>
+      </nav>
+    </header>
+
+    <main class="content">
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+</body>
+</html>

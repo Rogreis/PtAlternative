@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}Doc{{ '%03d'|format(paper) }} - PtAlternative Review{% endblock %}
+
+{% block content %}
+<section class="paragraph-toolbar">
+  <div>
+    <h1>REVISÃO DO PARÁGRAFO · Doc{{ '%03d'|format(paper) }} · Seção {{ section }} · Parágrafo {{ paragraph }}</h1>
+    <p class="lede">Arquivo: {{ portuguese_path }}</p>
+  </div>
+  <div class="toolbar-links">
+    {% if previous_link %}
+    <a class="ghost-button" href="{{ previous_link.href }}">Parágrafo anterior</a>
+    {% endif %}
+    {% if next_link %}
+    <a class="ghost-button" href="{{ next_link.href }}">Próximo parágrafo</a>
+    {% endif %}
+    <a class="ghost-button" href="/dashboard">Dashboard</a>
+  </div>
+</section>
+
+<section class="review-layout">
+  <article class="review-panel">
+    <h2>Texto em inglês</h2>
+    <div class="text-box source-text">{{ english.Text }}</div>
+  </article>
+
+  <article class="review-panel">
+    <h2>Texto atual em português</h2>
+    <div class="text-box current-text">{{ portuguese_text or 'Parágrafo ainda vazio.' }}</div>
+  </article>
+
+  <article class="review-panel review-panel-form">
+    <h2>Tradução corrigida</h2>
+    <form method="post" class="review-form">
+      <input type="hidden" name="action" value="preview" id="action-field">
+      <textarea name="proposed_text" rows="14" spellcheck="true">{{ proposal }}</textarea>
+      <div class="form-actions">
+        <button type="submit" onclick="document.getElementById('action-field').value='preview'">Pré-visualizar</button>
+        <button type="submit" class="primary" onclick="document.getElementById('action-field').value='save'">Salvar revisão</button>
+      </div>
+    </form>
+  </article>
+
+  <article class="review-panel merge-panel">
+    <h2>Merge / diff visual</h2>
+    <div class="merge-box">{{ merge_html | safe }}</div>
+  </article>
+</section>
+
+<section class="status-strip panel">
+  {% for line in status_lines %}
+  <div>
+    <strong>{{ line.label }}</strong>
+    <span>{{ line.value }}</span>
+  </div>
+  {% endfor %}
+</section>
+
+<section class="panel paragraph-info">
+  <div>
+    <strong>Documento</strong>
+    <span>Doc{{ '%03d'|format(paper) }}</span>
+  </div>
+  <div>
+    <strong>Diretório</strong>
+    <span>{{ document_dir }}</span>
+  </div>
+  <div>
+    <strong>Notas</strong>
+    <span>{{ document_summary.notes_count if document_summary else 0 }}</span>
+  </div>
+  <div>
+    <strong>Salvo</strong>
+    <span>{% if saved %}Sim{% else %}Não{% endif %}</span>
+  </div>
+</section>
+{% endblock %}

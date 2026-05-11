@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - PtAlternative Review{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div>
+    <p class="eyebrow">Revisão local</p>
+    <h1>Veja o inglês, o português atual e a proposta corrigida em uma única tela.</h1>
+    <p class="lede">Escolha um documento para abrir o primeiro parágrafo e navegar com avanços rápidos entre os trechos do livro.</p>
+  </div>
+  <div class="hero-stats">
+    <article>
+      <strong>{{ total_documents }}</strong>
+      <span>documentos</span>
+    </article>
+    <article>
+      <strong>{{ total_paragraphs }}</strong>
+      <span>arquivos de parágrafo</span>
+    </article>
+    <article>
+      <strong>{{ documents_with_notes }}</strong>
+      <span>com Notes.json</span>
+    </article>
+  </div>
+</section>
+
+<section class="panel panel-search">
+  <form method="get" action="/dashboard" class="search-form">
+    <label for="ref">Abrir Parágrafo</label>
+    <div class="search-row">
+      <input id="ref" name="ref" type="text" value="{{ reference_input }}" placeholder="D.S-P (ex.: 9.0-12)">
+      <button type="submit">Abrir</button>
+    </div>
+    <p class="search-help">Aceita apenas 3 inteiros. Separadores permitidos: espaço, ponto, vírgula, hífen ou dois-pontos.</p>
+    {% if reference_error %}
+    <p class="search-error">{{ reference_error }}</p>
+    {% endif %}
+  </form>
+</section>
+
+<section class="document-grid">
+  {% for doc in documents %}
+  <article class="document-card">
+    <div class="document-card-head">
+      <span class="document-code">Doc{{ '%03d'|format(doc.document_number) }}</span>
+      <span class="document-count">{{ doc.paragraph_count }} parágrafos</span>
+    </div>
+    <h2>{{ doc.title or '(sem título)' }}</h2>
+    <p>
+      Notas: {{ doc.notes_count }} · Duplicadas: {{ doc.duplicate_notes }}
+    </p>
+    <a class="card-link" href="/paragraph/{{ doc.document_number }}/0/0">Abrir revisão</a>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

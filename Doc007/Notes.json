@@ -1,1 +1,956 @@
-{"Notes":[{"Paper":7,"Section":0,"Paragraph":0,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:03.850","Status":1,"Format":1},{"Paper":7,"Section":0,"Paragraph":0,"TranslatorNote":"","Notes":"","LastDate":"2015-05-26T13:35:24.427","Status":1,"Format":1},{"Paper":7,"Section":0,"Paragraph":1,"TranslatorNote":"","Notes":"","LastDate":"2015-05-26T13:54:28.263","Status":1,"Format":3},{"Paper":7,"Section":0,"Paragraph":1,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:03.857","Status":1,"Format":3},{"Paper":7,"Section":0,"Paragraph":2,"TranslatorNote":"","Notes":"","LastDate":"2015-05-26T14:05:40.633","Status":1,"Format":3},{"Paper":7,"Section":0,"Paragraph":2,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:03.863","Status":1,"Format":3},{"Paper":7,"Section":0,"Paragraph":3,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:03.870","Status":1,"Format":3},{"Paper":7,"Section":0,"Paragraph":3,"TranslatorNote":"","Notes":"","LastDate":"2015-05-26T14:14:11.597","Status":1,"Format":3},{"Paper":7,"Section":0,"Paragraph":4,"TranslatorNote":"","Notes":"","LastDate":"2015-05-26T18:13:00.220","Status":1,"Format":3},{"Paper":7,"Section":0,"Paragraph":4,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:03.880","Status":1,"Format":3},{"Paper":7,"Section":0,"Paragraph":5,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:03.887","Status":1,"Format":3},{"Paper":7,"Section":0,"Paragraph":5,"TranslatorNote":"","Notes":"","LastDate":"2015-05-26T18:29:31.750","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":0,"TranslatorNote":"","Notes":"","LastDate":"2015-05-27T06:40:49.663","Status":1,"Format":2},{"Paper":7,"Section":1,"Paragraph":0,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:03.893","Status":1,"Format":2},{"Paper":7,"Section":1,"Paragraph":1,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:03.900","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":1,"TranslatorNote":"","Notes":"","LastDate":"2015-05-27T07:08:25.047","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":2,"TranslatorNote":"","Notes":"","LastDate":"2015-05-27T08:04:36.030","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":2,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:03.907","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":3,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:03.913","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":3,"TranslatorNote":"","Notes":"","LastDate":"2015-05-27T08:34:17.113","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":4,"TranslatorNote":"","Notes":"","LastDate":"2015-05-27T08:49:19.917","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":4,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:03.920","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":5,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:03.953","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":5,"TranslatorNote":"","Notes":"","LastDate":"2015-05-27T12:04:44.767","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":6,"TranslatorNote":"","Notes":"","LastDate":"2015-05-27T13:25:05.797","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":6,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:03.960","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":7,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:03.967","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":7,"TranslatorNote":"","Notes":"","LastDate":"2015-05-27T13:55:36.507","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":8,"TranslatorNote":"","Notes":"","LastDate":"2015-05-27T14:12:15.010","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":8,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:03.973","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":9,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:03.980","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":9,"TranslatorNote":"","Notes":"","LastDate":"2015-05-27T17:58:31.060","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":10,"TranslatorNote":"","Notes":"","LastDate":"2015-05-27T18:11:24.950","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":10,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:03.990","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":11,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:03.997","Status":1,"Format":3},{"Paper":7,"Section":1,"Paragraph":11,"TranslatorNote":"","Notes":"","LastDate":"2015-05-27T18:22:30.547","Status":1,"Format":3},{"Paper":7,"Section":2,"Paragraph":0,"TranslatorNote":"","Notes":"","LastDate":"2015-05-27T18:26:36.997","Status":1,"Format":2},{"Paper":7,"Section":2,"Paragraph":0,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.003","Status":1,"Format":2},{"Paper":7,"Section":2,"Paragraph":1,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.010","Status":1,"Format":3},{"Paper":7,"Section":2,"Paragraph":1,"TranslatorNote":"","Notes":"","LastDate":"2015-05-28T05:06:51.483","Status":1,"Format":3},{"Paper":7,"Section":2,"Paragraph":2,"TranslatorNote":"","Notes":"","LastDate":"2015-05-28T05:12:23.547","Status":1,"Format":3},{"Paper":7,"Section":2,"Paragraph":2,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.017","Status":1,"Format":3},{"Paper":7,"Section":2,"Paragraph":3,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.023","Status":1,"Format":3},{"Paper":7,"Section":2,"Paragraph":3,"TranslatorNote":"","Notes":"","LastDate":"2015-05-28T05:24:59.220","Status":1,"Format":3},{"Paper":7,"Section":2,"Paragraph":4,"TranslatorNote":"","Notes":"","LastDate":"2015-05-28T05:38:41.043","Status":1,"Format":3},{"Paper":7,"Section":2,"Paragraph":4,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.030","Status":1,"Format":3},{"Paper":7,"Section":3,"Paragraph":0,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.040","Status":1,"Format":2},{"Paper":7,"Section":3,"Paragraph":0,"TranslatorNote":"","Notes":"","LastDate":"2015-05-28T05:40:27.870","Status":1,"Format":2},{"Paper":7,"Section":3,"Paragraph":1,"TranslatorNote":"","Notes":"","LastDate":"2015-05-28T05:59:12.943","Status":1,"Format":3},{"Paper":7,"Section":3,"Paragraph":1,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.047","Status":1,"Format":3},{"Paper":7,"Section":3,"Paragraph":2,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.053","Status":1,"Format":3},{"Paper":7,"Section":3,"Paragraph":2,"TranslatorNote":"","Notes":"","LastDate":"2015-05-28T14:31:04.480","Status":1,"Format":3},{"Paper":7,"Section":3,"Paragraph":3,"TranslatorNote":"","Notes":"","LastDate":"2015-05-28T14:49:27.530","Status":1,"Format":3},{"Paper":7,"Section":3,"Paragraph":3,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.060","Status":1,"Format":3},{"Paper":7,"Section":3,"Paragraph":4,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.067","Status":1,"Format":3},{"Paper":7,"Section":3,"Paragraph":4,"TranslatorNote":"","Notes":"","LastDate":"2015-05-29T02:02:17.587","Status":1,"Format":3},{"Paper":7,"Section":3,"Paragraph":5,"TranslatorNote":"","Notes":"","LastDate":"2015-05-29T02:55:58.920","Status":1,"Format":3},{"Paper":7,"Section":3,"Paragraph":5,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.073","Status":1,"Format":3},{"Paper":7,"Section":3,"Paragraph":6,"TranslatorNote":"","Notes":"","LastDate":"2015-05-30T07:59:00.223","Status":1,"Format":3},{"Paper":7,"Section":3,"Paragraph":6,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.080","Status":1,"Format":3},{"Paper":7,"Section":3,"Paragraph":7,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.087","Status":1,"Format":3},{"Paper":7,"Section":3,"Paragraph":7,"TranslatorNote":"","Notes":"","LastDate":"2015-05-30T08:26:47.593","Status":1,"Format":3},{"Paper":7,"Section":4,"Paragraph":0,"TranslatorNote":"","Notes":"","LastDate":"2015-05-30T14:54:08.063","Status":1,"Format":2},{"Paper":7,"Section":4,"Paragraph":0,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.093","Status":1,"Format":2},{"Paper":7,"Section":4,"Paragraph":1,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.100","Status":1,"Format":3},{"Paper":7,"Section":4,"Paragraph":1,"TranslatorNote":"","Notes":"","LastDate":"2015-05-30T15:13:17.307","Status":1,"Format":3},{"Paper":7,"Section":4,"Paragraph":2,"TranslatorNote":"","Notes":"","LastDate":"2015-05-30T15:21:24.283","Status":1,"Format":3},{"Paper":7,"Section":4,"Paragraph":2,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.110","Status":1,"Format":3},{"Paper":7,"Section":4,"Paragraph":3,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.117","Status":1,"Format":3},{"Paper":7,"Section":4,"Paragraph":3,"TranslatorNote":"","Notes":"","LastDate":"2015-05-30T15:28:42.950","Status":1,"Format":3},{"Paper":7,"Section":4,"Paragraph":4,"TranslatorNote":"","Notes":"","LastDate":"2015-05-30T15:40:07.713","Status":1,"Format":3},{"Paper":7,"Section":4,"Paragraph":4,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.123","Status":1,"Format":3},{"Paper":7,"Section":4,"Paragraph":5,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.130","Status":1,"Format":3},{"Paper":7,"Section":4,"Paragraph":5,"TranslatorNote":"","Notes":"","LastDate":"2015-05-30T18:29:46.627","Status":1,"Format":3},{"Paper":7,"Section":4,"Paragraph":6,"TranslatorNote":"","Notes":"","LastDate":"2015-05-31T02:40:31.553","Status":1,"Format":3},{"Paper":7,"Section":4,"Paragraph":6,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.137","Status":1,"Format":3},{"Paper":7,"Section":4,"Paragraph":7,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.143","Status":1,"Format":3},{"Paper":7,"Section":4,"Paragraph":7,"TranslatorNote":"","Notes":"","LastDate":"2015-05-31T02:58:24.930","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":0,"TranslatorNote":"","Notes":"","LastDate":"2015-05-31T03:02:21.137","Status":1,"Format":2},{"Paper":7,"Section":5,"Paragraph":0,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.150","Status":1,"Format":2},{"Paper":7,"Section":5,"Paragraph":1,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.173","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":1,"TranslatorNote":"","Notes":"","LastDate":"2015-05-31T05:14:59.983","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":2,"TranslatorNote":"","Notes":"","LastDate":"2015-05-31T05:32:19.560","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":2,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.180","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":3,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.187","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":3,"TranslatorNote":"","Notes":"","LastDate":"2015-05-31T06:00:47.400","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":4,"TranslatorNote":"","Notes":"","LastDate":"2015-05-31T06:30:16.823","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":4,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.213","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":5,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.220","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":5,"TranslatorNote":"","Notes":"","LastDate":"2015-05-31T06:46:13.130","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":6,"TranslatorNote":"","Notes":"","LastDate":"2015-05-31T11:47:51.903","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":6,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.233","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":7,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.240","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":7,"TranslatorNote":"","Notes":"","LastDate":"2015-05-31T13:22:00.637","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":8,"TranslatorNote":"","Notes":"","LastDate":"2015-05-31T17:45:09.270","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":8,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.247","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":9,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.253","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":9,"TranslatorNote":"","Notes":"","LastDate":"2015-05-31T18:23:48.947","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":10,"TranslatorNote":"","Notes":"","LastDate":"2015-06-01T08:25:53.683","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":10,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.260","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":11,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.270","Status":1,"Format":3},{"Paper":7,"Section":5,"Paragraph":11,"TranslatorNote":"","Notes":"","LastDate":"2015-06-01T08:31:57.450","Status":1,"Format":3},{"Paper":7,"Section":6,"Paragraph":0,"TranslatorNote":"","Notes":"","LastDate":"2015-06-01T11:02:21.477","Status":1,"Format":2},{"Paper":7,"Section":6,"Paragraph":0,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.277","Status":1,"Format":2},{"Paper":7,"Section":6,"Paragraph":1,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.283","Status":1,"Format":3},{"Paper":7,"Section":6,"Paragraph":1,"TranslatorNote":"","Notes":"","LastDate":"2015-06-01T11:16:01.587","Status":1,"Format":3},{"Paper":7,"Section":6,"Paragraph":2,"TranslatorNote":"","Notes":"","LastDate":"2015-06-01T11:24:52.317","Status":1,"Format":3},{"Paper":7,"Section":6,"Paragraph":2,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.290","Status":1,"Format":3},{"Paper":7,"Section":6,"Paragraph":3,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.297","Status":1,"Format":3},{"Paper":7,"Section":6,"Paragraph":3,"TranslatorNote":"","Notes":"","LastDate":"2015-06-01T11:39:28.493","Status":1,"Format":3},{"Paper":7,"Section":6,"Paragraph":4,"TranslatorNote":"","Notes":"","LastDate":"2015-06-01T13:16:23.737","Status":1,"Format":3},{"Paper":7,"Section":6,"Paragraph":4,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.303","Status":1,"Format":3},{"Paper":7,"Section":6,"Paragraph":5,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.310","Status":1,"Format":3},{"Paper":7,"Section":6,"Paragraph":5,"TranslatorNote":"","Notes":"","LastDate":"2015-06-01T13:22:23.743","Status":1,"Format":3},{"Paper":7,"Section":6,"Paragraph":6,"TranslatorNote":"","Notes":"","LastDate":"2015-06-01T13:28:35.070","Status":1,"Format":3},{"Paper":7,"Section":6,"Paragraph":6,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.320","Status":1,"Format":3},{"Paper":7,"Section":6,"Paragraph":7,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.327","Status":1,"Format":3},{"Paper":7,"Section":6,"Paragraph":7,"TranslatorNote":"","Notes":"","LastDate":"2015-06-01T13:48:56.243","Status":1,"Format":3},{"Paper":7,"Section":6,"Paragraph":8,"TranslatorNote":"","Notes":"","LastDate":"2015-06-01T14:07:49.120","Status":1,"Format":3},{"Paper":7,"Section":6,"Paragraph":8,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.333","Status":1,"Format":3},{"Paper":7,"Section":7,"Paragraph":0,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.340","Status":1,"Format":2},{"Paper":7,"Section":7,"Paragraph":0,"TranslatorNote":"","Notes":"","LastDate":"2015-06-01T14:12:42.027","Status":1,"Format":2},{"Paper":7,"Section":7,"Paragraph":1,"TranslatorNote":"","Notes":"","LastDate":"2015-06-01T14:24:45.807","Status":1,"Format":3},{"Paper":7,"Section":7,"Paragraph":1,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.347","Status":1,"Format":3},{"Paper":7,"Section":7,"Paragraph":2,"TranslatorNote":"","Notes":"","LastDate":"2015-06-01T14:33:56.463","Status":1,"Format":3},{"Paper":7,"Section":7,"Paragraph":2,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.353","Status":1,"Format":3},{"Paper":7,"Section":7,"Paragraph":3,"TranslatorNote":"","Notes":"","LastDate":"2015-06-01T14:45:34.793","Status":1,"Format":3},{"Paper":7,"Section":7,"Paragraph":3,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.360","Status":1,"Format":3},{"Paper":7,"Section":7,"Paragraph":4,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.367","Status":1,"Format":3},{"Paper":7,"Section":7,"Paragraph":4,"TranslatorNote":"","Notes":"","LastDate":"2015-06-01T14:57:05.823","Status":1,"Format":3},{"Paper":7,"Section":7,"Paragraph":5,"TranslatorNote":"","Notes":"","LastDate":"2015-06-01T17:58:04.343","Status":1,"Format":3},{"Paper":7,"Section":7,"Paragraph":5,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.373","Status":1,"Format":3},{"Paper":7,"Section":7,"Paragraph":6,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.380","Status":1,"Format":3},{"Paper":7,"Section":7,"Paragraph":6,"TranslatorNote":"","Notes":"","LastDate":"2015-06-01T18:09:29.137","Status":1,"Format":3},{"Paper":7,"Section":7,"Paragraph":7,"TranslatorNote":"","Notes":"","LastDate":"2015-06-01T18:15:08.177","Status":1,"Format":3},{"Paper":7,"Section":7,"Paragraph":7,"TranslatorNote":"","Notes":"","LastDate":"2013-07-16T11:34:04.390","Status":1,"Format":3}]}
+{
+  "Notes": [
+    {
+      "Paper": 7,
+      "Section": 0,
+      "Paragraph": 0,
+      "Status": 4,
+      "Format": 1
+    },
+    {
+      "Paper": 7,
+      "Section": 0,
+      "Paragraph": 0,
+      "Status": 4,
+      "Format": 1
+    },
+    {
+      "Paper": 7,
+      "Section": 0,
+      "Paragraph": 1,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 0,
+      "Paragraph": 1,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 0,
+      "Paragraph": 2,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 0,
+      "Paragraph": 2,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 0,
+      "Paragraph": 3,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 0,
+      "Paragraph": 3,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 0,
+      "Paragraph": 4,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 0,
+      "Paragraph": 4,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 0,
+      "Paragraph": 5,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 0,
+      "Paragraph": 5,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 0,
+      "Status": 4,
+      "Format": 2
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 0,
+      "Status": 4,
+      "Format": 2
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 1,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 1,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 2,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 2,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 3,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 3,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 4,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 4,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 5,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 5,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 6,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 6,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 7,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 7,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 8,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 8,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 9,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 9,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 10,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 10,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 11,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 1,
+      "Paragraph": 11,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 2,
+      "Paragraph": 0,
+      "Status": 4,
+      "Format": 2
+    },
+    {
+      "Paper": 7,
+      "Section": 2,
+      "Paragraph": 0,
+      "Status": 4,
+      "Format": 2
+    },
+    {
+      "Paper": 7,
+      "Section": 2,
+      "Paragraph": 1,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 2,
+      "Paragraph": 1,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 2,
+      "Paragraph": 2,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 2,
+      "Paragraph": 2,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 2,
+      "Paragraph": 3,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 2,
+      "Paragraph": 3,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 2,
+      "Paragraph": 4,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 2,
+      "Paragraph": 4,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 3,
+      "Paragraph": 0,
+      "Status": 4,
+      "Format": 2
+    },
+    {
+      "Paper": 7,
+      "Section": 3,
+      "Paragraph": 0,
+      "Status": 4,
+      "Format": 2
+    },
+    {
+      "Paper": 7,
+      "Section": 3,
+      "Paragraph": 1,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 3,
+      "Paragraph": 1,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 3,
+      "Paragraph": 2,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 3,
+      "Paragraph": 2,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 3,
+      "Paragraph": 3,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 3,
+      "Paragraph": 3,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 3,
+      "Paragraph": 4,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 3,
+      "Paragraph": 4,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 3,
+      "Paragraph": 5,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 3,
+      "Paragraph": 5,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 3,
+      "Paragraph": 6,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 3,
+      "Paragraph": 6,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 3,
+      "Paragraph": 7,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 3,
+      "Paragraph": 7,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 4,
+      "Paragraph": 0,
+      "Status": 4,
+      "Format": 2
+    },
+    {
+      "Paper": 7,
+      "Section": 4,
+      "Paragraph": 0,
+      "Status": 4,
+      "Format": 2
+    },
+    {
+      "Paper": 7,
+      "Section": 4,
+      "Paragraph": 1,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 4,
+      "Paragraph": 1,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 4,
+      "Paragraph": 2,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 4,
+      "Paragraph": 2,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 4,
+      "Paragraph": 3,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 4,
+      "Paragraph": 3,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 4,
+      "Paragraph": 4,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 4,
+      "Paragraph": 4,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 4,
+      "Paragraph": 5,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 4,
+      "Paragraph": 5,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 4,
+      "Paragraph": 6,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 4,
+      "Paragraph": 6,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 4,
+      "Paragraph": 7,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 4,
+      "Paragraph": 7,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 0,
+      "Status": 4,
+      "Format": 2
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 0,
+      "Status": 4,
+      "Format": 2
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 1,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 1,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 2,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 2,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 3,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 3,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 4,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 4,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 5,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 5,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 6,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 6,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 7,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 7,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 8,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 8,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 9,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 9,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 10,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 10,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 11,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 5,
+      "Paragraph": 11,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 6,
+      "Paragraph": 0,
+      "Status": 4,
+      "Format": 2
+    },
+    {
+      "Paper": 7,
+      "Section": 6,
+      "Paragraph": 0,
+      "Status": 4,
+      "Format": 2
+    },
+    {
+      "Paper": 7,
+      "Section": 6,
+      "Paragraph": 1,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 6,
+      "Paragraph": 1,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 6,
+      "Paragraph": 2,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 6,
+      "Paragraph": 2,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 6,
+      "Paragraph": 3,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 6,
+      "Paragraph": 3,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 6,
+      "Paragraph": 4,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 6,
+      "Paragraph": 4,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 6,
+      "Paragraph": 5,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 6,
+      "Paragraph": 5,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 6,
+      "Paragraph": 6,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 6,
+      "Paragraph": 6,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 6,
+      "Paragraph": 7,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 6,
+      "Paragraph": 7,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 6,
+      "Paragraph": 8,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 6,
+      "Paragraph": 8,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 7,
+      "Paragraph": 0,
+      "Status": 4,
+      "Format": 2
+    },
+    {
+      "Paper": 7,
+      "Section": 7,
+      "Paragraph": 0,
+      "Status": 4,
+      "Format": 2
+    },
+    {
+      "Paper": 7,
+      "Section": 7,
+      "Paragraph": 1,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 7,
+      "Paragraph": 1,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 7,
+      "Paragraph": 2,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 7,
+      "Paragraph": 2,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 7,
+      "Paragraph": 3,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 7,
+      "Paragraph": 3,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 7,
+      "Paragraph": 4,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 7,
+      "Paragraph": 4,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 7,
+      "Paragraph": 5,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 7,
+      "Paragraph": 5,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 7,
+      "Paragraph": 6,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 7,
+      "Paragraph": 6,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 7,
+      "Paragraph": 7,
+      "Status": 4,
+      "Format": 3
+    },
+    {
+      "Paper": 7,
+      "Section": 7,
+      "Paragraph": 7,
+      "Status": 4,
+      "Format": 3
+    }
+  ]
+}

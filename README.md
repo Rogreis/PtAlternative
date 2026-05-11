@@ -53,6 +53,25 @@ Observação: se foram alterados diversos parágrafos, a mensagem acima vai ser 
         Sugestão para melhor entendimento
   
 Para maiores instruções sobre o git: `https://www.w3schools.com/git/`  (em inglês)
+
+
+#### Ferramenta local de revisão
+
+O repositório agora inclui um utilitário em Python para ajudar na revisão do texto diretamente na estrutura dos diretórios `Doc000` a `Doc196`.
+
+Do diretório raiz do repositório, use:
+
+`python scripts/menu.py summary`
+
+`python scripts/menu.py doc 0`
+
+`python scripts/menu.py report -o review_dashboard.md`
+
+O comando `summary` mostra o panorama geral, `doc` detalha um documento específico e `report` gera um dashboard em markdown para acompanhar a revisão.
+
+Se preferir o navegador, há também uma interface local em FastAPI:
+
+`python -m uvicorn review_web.main:app --reload --port 8000`
   
 
 #### Ocorrências de superscript no texto (nesta revisão representados como bold):
