@@ -185,6 +185,9 @@
   },
   "active": "479370ab1d2f2a62",
   "lastOpenFiles": [
+    "scripts/start.sh",
+    "review_web/__pycache__/paragraph_fields.cpython-312.pyc",
+    "review_web/paragraph_fields.py",
     "scripts/__pycache__/__init__.cpython-312.pyc",
     "review_web/__pycache__/main.cpython-312.pyc",
     "review_web/__pycache__/__init__.cpython-312.pyc",
@@ -193,9 +196,6 @@
     "review_web/templates/paragraph.html",
     "review_web/templates/index.html",
     "review_web/templates/base.html",
-    "review_web/main.py",
-    "scripts/__init__.py",
-    "requirements-web.txt",
     "review_dashboard.md",
     "scripts/README.md",
     "README.md"

@@ -25,13 +25,28 @@
     <div class="text-box source-text">{{ english.Text }}</div>
   </article>
 
-  <article class="review-panel">
-    <h2>Texto atual em português</h2>
-    <div class="text-box current-text">{{ portuguese_text or 'Parágrafo ainda vazio.' }}</div>
+  <article class="review-panel" id="panel-current">
+    <div class="view-mode-buttons" aria-label="Atalhos de visualização">
+      {% for button in view_mode_buttons %}
+      <button
+        type="button"
+        class="view-mode-button {{ button.variant }}{% if button.mode == 'current' %} is-active{% endif %}"
+        data-view-mode="{{ button.mode }}"
+        title="{{ button.tooltip }}"
+      >{{ button.label }}</button>
+      {% endfor %}
+    </div>
+    <div
+      class="text-box current-text"
+      id="dynamic-preview"
+      data-current-text="{{ (portuguese_text or '') | e }}"
+      data-ai-proposed="{{ (ai_proposal or '') | e }}"
+      data-ai-comments="{{ (ai_comments or '') | e }}"
+    >{{ portuguese_text or 'Parágrafo ainda vazio.' }}</div>
   </article>
 
-  <article class="review-panel review-panel-form">
-    <h2>Tradução corrigida</h2>
+  <article class="review-panel review-panel-form" id="panel-proposed">
+    <h2>Tradução corrigida <span class="inline-status">Status: {{ paragraph_status }}</span></h2>
     <form method="post" class="review-form">
       <input type="hidden" name="action" value="preview" id="action-field">
       <textarea name="proposed_text" rows="14" spellcheck="true">{{ proposal }}</textarea>
@@ -42,11 +57,146 @@
     </form>
   </article>
 
-  <article class="review-panel merge-panel">
-    <h2>Merge / diff visual</h2>
-    <div class="merge-box">{{ merge_html | safe }}</div>
-  </article>
 </section>
+
+<script>
+  (function () {
+    const previewBox = document.getElementById('dynamic-preview');
+    const proposedInput = document.querySelector('textarea[name="proposed_text"]');
+    const modeButtons = Array.from(document.querySelectorAll('[data-view-mode]'));
+    if (!previewBox || !proposedInput || modeButtons.length === 0) {
+      return;
+    }
+
+    const currentText = previewBox.dataset.currentText || '';
+    const aiProposedText = previewBox.dataset.aiProposed || '';
+    const aiComments = previewBox.dataset.aiComments || '';
+
+    let activeMode = 'current';
+    let renderTimer = null;
+
+    function escapeHtml(text) {
+      return text
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
+
+    function splitTokens(text) {
+      return text.split(/(\s+)/);
+    }
+
+    function buildMergeHtml(baseText, proposedText) {
+      if (baseText === proposedText) {
+        return `<span class="merge-equal">${escapeHtml(baseText)}</span>`;
+      }
+
+      const baseTokens = splitTokens(baseText);
+      const proposedTokens = splitTokens(proposedText);
+      const complexity = baseTokens.length * proposedTokens.length;
+
+      if (complexity > 250000) {
+        return `<del class="merge-delete">${escapeHtml(baseText)}</del><ins class="merge-insert">${escapeHtml(proposedText)}</ins>`;
+      }
+
+      const n = baseTokens.length;
+      const m = proposedTokens.length;
+      const dp = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(0));
+
+      for (let i = n - 1; i >= 0; i -= 1) {
+        for (let j = m - 1; j >= 0; j -= 1) {
+          if (baseTokens[i] === proposedTokens[j]) {
+            dp[i][j] = dp[i + 1][j + 1] + 1;
+          } else {
+            dp[i][j] = Math.max(dp[i + 1][j], dp[i][j + 1]);
+          }
+        }
+      }
+
+      const chunks = [];
+      let i = 0;
+      let j = 0;
+      while (i < n && j < m) {
+        if (baseTokens[i] === proposedTokens[j]) {
+          chunks.push(`<span class="merge-equal">${escapeHtml(baseTokens[i])}</span>`);
+          i += 1;
+          j += 1;
+          continue;
+        }
+
+        if (dp[i + 1][j] >= dp[i][j + 1]) {
+          chunks.push(`<del class="merge-delete">${escapeHtml(baseTokens[i])}</del>`);
+          i += 1;
+        } else {
+          chunks.push(`<ins class="merge-insert">${escapeHtml(proposedTokens[j])}</ins>`);
+          j += 1;
+        }
+      }
+
+      while (i < n) {
+        chunks.push(`<del class="merge-delete">${escapeHtml(baseTokens[i])}</del>`);
+        i += 1;
+      }
+
+      while (j < m) {
+        chunks.push(`<ins class="merge-insert">${escapeHtml(proposedTokens[j])}</ins>`);
+        j += 1;
+      }
+
+      return chunks.join('') || '<span class="merge-empty">Sem alterações.</span>';
+    }
+
+    function updateButtons() {
+      modeButtons.forEach((button) => {
+        const buttonMode = button.dataset.viewMode;
+        button.classList.toggle('is-active', buttonMode === activeMode);
+      });
+    }
+
+    function renderPreview() {
+      const proposedText = proposedInput.value || '';
+
+      if (activeMode === 'merge') {
+        previewBox.innerHTML = buildMergeHtml(currentText, proposedText);
+      } else if (activeMode === 'comments') {
+        previewBox.textContent = aiComments || 'Sem comentarios da IA no momento.';
+      } else if (activeMode === 'proposed') {
+        previewBox.textContent = aiProposedText || proposedText || 'Sem proposta no momento.';
+      } else {
+        previewBox.textContent = currentText || 'Parágrafo ainda vazio.';
+      }
+
+      updateButtons();
+    }
+
+    function scheduleRender() {
+      if (renderTimer !== null) {
+        clearTimeout(renderTimer);
+      }
+      renderTimer = setTimeout(() => {
+        renderTimer = null;
+        renderPreview();
+      }, 120);
+    }
+
+    modeButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        activeMode = button.dataset.viewMode || 'current';
+        renderPreview();
+      });
+    });
+
+    proposedInput.addEventListener('input', () => {
+      if (activeMode === 'merge' || activeMode === 'proposed') {
+        scheduleRender();
+      }
+    });
+
+    renderPreview();
+  })();
+</script>
 
 <section class="status-strip panel">
   {% for line in status_lines %}

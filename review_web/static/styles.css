@@ -297,6 +297,54 @@ button:hover {
   align-items: center;
 }
 
+.view-mode-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.view-mode-button {
+  min-width: 108px;
+  border: 1px solid var(--border);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.24);
+}
+
+.view-mode-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.view-mode-button.current {
+  background: linear-gradient(145deg, #3b82f6, #1d4ed8);
+}
+
+.view-mode-button.proposed {
+  background: linear-gradient(145deg, #22c55e, #15803d);
+}
+
+.view-mode-button.merge {
+  background: linear-gradient(145deg, #f59e0b, #b45309);
+}
+
+.view-mode-button.comments {
+  background: linear-gradient(145deg, #0ea5a2, #0f766e);
+}
+
+.view-mode-button.is-active {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.22), 0 10px 20px rgba(0, 0, 0, 0.34);
+}
+
+.inline-status {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
 .toolbar-links {
   display: flex;
   flex-wrap: wrap;

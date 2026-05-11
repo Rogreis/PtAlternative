@@ -1,18 +1,17 @@
 from __future__ import annotations
 
-import difflib
-import html
 import json
+import logging
 import re
-from dataclasses import dataclass
 from pathlib import Path
 from urllib.parse import parse_qs
 
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
+from review_web.paragraph_fields import build_paragraph_fields, build_view_mode_buttons, load_paragraph_data
 from scripts.repository import BookRepository
 
 
@@ -23,6 +22,17 @@ LAST_PARAGRAPH_PATH = BASE_DIR / "last_saved_paragraph.json"
 
 app = FastAPI(title="PtAlternative Review")
 app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
+logger = logging.getLogger("uvicorn.error")
+
+
+def debug_log(message: str):
+    print(message, flush=True)
+    logger.info(message)
+
+
+@app.on_event("startup")
+def startup_trace():
+    debug_log("[startup] review_web.main loaded and startup completed")
 
 
 STATUS_LABELS = [
@@ -33,19 +43,9 @@ STATUS_LABELS = [
     (4, "Closed"),
 ]
 
+STATUS_LABEL_MAP = {str(status): label for status, label in STATUS_LABELS}
+
 PARAGRAPH_FILENAME_PATTERN = re.compile(r"Par_(\d{3})_(\d{3})_(\d{3})\.md$")
-
-
-@dataclass(frozen=True)
-class ParagraphLink:
-    paper: int
-    section: int
-    paragraph: int
-    title: str
-
-    @property
-    def href(self) -> str:
-        return f"/paragraph/{self.paper}/{self.section}/{self.paragraph}"
 
 
 def status_label_lines(status_counts: dict[str, int]):
@@ -58,34 +58,22 @@ def status_label_lines(status_counts: dict[str, int]):
     ]
 
 
+def paragraph_status_label(repository: BookRepository, document_dir, paper: int, section: int, paragraph: int) -> str:
+    """Returns the status label for the given paragraph from Notes.json, when available."""
+    notes = repository.load_notes(document_dir)
+    for note in reversed(notes):
+        if (
+            int(note.get("Paper", -1)) == paper
+            and int(note.get("Section", -1)) == section
+            and int(note.get("Paragraph", -1)) == paragraph
+        ):
+            return STATUS_LABEL_MAP.get(str(note.get("Status", "")), str(note.get("Status", "-")))
+
+    return "-"
+
+
 def format_number(value: int) -> str:
     return f"{value:,}".replace(",", ".")
-
-
-def split_tokens(text: str):
-    return re.split(r"(\s+)", text)
-
-
-def merge_preview_html(base_text: str, proposed_text: str) -> str:
-    base_tokens = split_tokens(base_text)
-    proposed_tokens = split_tokens(proposed_text)
-    matcher = difflib.SequenceMatcher(None, base_tokens, proposed_tokens)
-
-    chunks: list[str] = []
-    for tag, start_base, end_base, start_new, end_new in matcher.get_opcodes():
-        base_chunk = html.escape("".join(base_tokens[start_base:end_base]))
-        new_chunk = html.escape("".join(proposed_tokens[start_new:end_new]))
-
-        if tag == "equal":
-            chunks.append(f"<span class=\"merge-equal\">{base_chunk}</span>")
-        elif tag == "delete":
-            chunks.append(f"<del class=\"merge-delete\">{base_chunk}</del>")
-        elif tag == "insert":
-            chunks.append(f"<ins class=\"merge-insert\">{new_chunk}</ins>")
-        else:
-            chunks.append(f"<del class=\"merge-delete\">{base_chunk}</del><ins class=\"merge-insert\">{new_chunk}</ins>")
-
-    return "".join(chunks) or "<span class=\"merge-empty\">Sem alterações.</span>"
 
 
 def paragraph_target(paper: int, section: int, paragraph: int):
@@ -122,69 +110,25 @@ def parse_paragraph_reference(value: str) -> tuple[int, int, int] | None:
     return int(match.group(1)), int(match.group(2)), int(match.group(3))
 
 
-def load_paragraph_data(paper: int, section: int, paragraph: int):
-    english = REPOSITORY.get_english_paragraph(paper, section, paragraph)
-    if english is None:
-        raise HTTPException(status_code=404, detail="Parágrafo em inglês não encontrado.")
-
-    document_dir = REPOSITORY.get_document_dir(paper)
-    if document_dir is None:
-        raise HTTPException(status_code=404, detail="Documento português não encontrado.")
-
-    portuguese_path = REPOSITORY.get_portuguese_paragraph_path(paper, section, paragraph)
-    portuguese_text = REPOSITORY.load_portuguese_paragraph(paper, section, paragraph)
-    document_summary = REPOSITORY.get_document_summary(paper) or {}
-    paragraph_files = REPOSITORY.list_paragraph_files(document_dir)
-
-    ordered_links: list[ParagraphLink] = []
-    current_index = None
-    for index, paragraph_file in enumerate(paragraph_files):
-        match = PARAGRAPH_FILENAME_PATTERN.fullmatch(paragraph_file.name)
-        if match is None:
-            continue
-
-        link = ParagraphLink(
-            paper=int(match.group(1)),
-            section=int(match.group(2)),
-            paragraph=int(match.group(3)),
-            title=paragraph_file.stem,
-        )
-        ordered_links.append(link)
-        if link.paper == paper and link.section == section and link.paragraph == paragraph:
-            current_index = index
-
-    previous_link = ordered_links[current_index - 1] if current_index is not None and current_index > 0 else None
-    next_link = (
-        ordered_links[current_index + 1]
-        if current_index is not None and current_index + 1 < len(ordered_links)
-        else None
-    )
-
-    return {
-        "english": english,
-        "portuguese_text": portuguese_text,
-        "portuguese_path": portuguese_path,
-        "document_dir": document_dir,
-        "document_summary": document_summary,
-        "previous_link": previous_link,
-        "next_link": next_link,
-    }
-
-
 @app.get("/", response_class=HTMLResponse)
 def home(request: Request, ref: str | None = None):
+    debug_log(f"[home] start ref={ref!r}")
     if not ref:
         last_paragraph = load_last_saved_paragraph()
         if last_paragraph is not None:
             paper, section, paragraph = last_paragraph
+            debug_log(f"[home] redirecting to last paragraph {paper}/{section}/{paragraph}")
             return RedirectResponse(url=f"/paragraph/{paper}/{section}/{paragraph}", status_code=303)
 
+    debug_log("[home] calling dashboard")
     return dashboard(request, ref)
 
 
 @app.get("/dashboard", response_class=HTMLResponse)
 def dashboard(request: Request, ref: str | None = None):
+    debug_log(f"[dashboard] start ref={ref!r}")
     summaries = REPOSITORY.summarize_documents()
+    debug_log(f"[dashboard] summaries_loaded={len(summaries)}")
     reference_input = (ref or "").strip()
     reference_error = ""
 
@@ -192,6 +136,7 @@ def dashboard(request: Request, ref: str | None = None):
         parsed_reference = parse_paragraph_reference(reference_input)
         if parsed_reference is not None:
             paper, section, paragraph = parsed_reference
+            debug_log(f"[dashboard] redirecting to paragraph {paper}/{section}/{paragraph}")
             return RedirectResponse(url=f"/paragraph/{paper}/{section}/{paragraph}", status_code=303)
         reference_error = "Use exatamente 3 inteiros no formato D.S-P, separados por espaço, . , - ou : (ex.: 9.0-12)."
 
@@ -199,6 +144,7 @@ def dashboard(request: Request, ref: str | None = None):
     total_paragraphs = sum(item["paragraph_count"] for item in REPOSITORY.summarize_documents())
 
     return TEMPLATES.TemplateResponse(
+        request,
         "index.html",
         {
             "request": request,
@@ -219,26 +165,33 @@ def open_document(paper: int):
 
 @app.get("/paragraph/{paper}/{section}/{paragraph}", response_class=HTMLResponse)
 def paragraph_view(request: Request, paper: int, section: int, paragraph: int, saved: str | None = None):
-    context = load_paragraph_data(paper, section, paragraph)
-    proposal = context["portuguese_text"]
-    merge_html = merge_preview_html(context["portuguese_text"], proposal)
+    debug_log(f"[paragraph_view] start paper={paper} section={section} paragraph={paragraph} saved={saved}")
+    context = load_paragraph_data(REPOSITORY, paper, section, paragraph)
+    debug_log("[paragraph_view] load_paragraph_data done")
+    fields = build_paragraph_fields(context["english"], context["portuguese_text"])
+    debug_log("[paragraph_view] build_paragraph_fields done")
+    view_mode_buttons = build_view_mode_buttons(paper, section, paragraph)
+    debug_log("[paragraph_view] build_view_mode_buttons done")
+    paragraph_status = paragraph_status_label(REPOSITORY, context["document_dir"], paper, section, paragraph)
+    debug_log(f"[paragraph_view] paragraph_status={paragraph_status}")
 
+    debug_log("[paragraph_view] rendering TemplateResponse")
     return TEMPLATES.TemplateResponse(
+        request,
         "paragraph.html",
         {
             "request": request,
             "paper": paper,
             "section": section,
             "paragraph": paragraph,
-            "english": context["english"],
-            "portuguese_text": context["portuguese_text"],
-            "proposal": proposal,
-            "merge_html": merge_html,
+            **fields,
             "portuguese_path": context["portuguese_path"],
             "document_dir": context["document_dir"],
             "document_summary": context["document_summary"],
             "previous_link": context["previous_link"],
             "next_link": context["next_link"],
+            "view_mode_buttons": view_mode_buttons,
+            "paragraph_status": paragraph_status,
             "saved": saved == "1",
             "status_lines": status_label_lines(REPOSITORY.summarize_notes(REPOSITORY.load_notes(context["document_dir"])).get("status_counts", {})),
         },
@@ -252,41 +205,65 @@ async def paragraph_submit(
     section: int,
     paragraph: int,
 ):
+    debug_log(f"[paragraph_submit] start paper={paper} section={section} paragraph={paragraph}")
     body = (await request.body()).decode("utf-8", errors="replace")
+    debug_log(f"[paragraph_submit] body_length={len(body)}")
     form_data = parse_qs(body)
     proposed_text = form_data.get("proposed_text", [""])[0]
     action = form_data.get("action", ["preview"])[0]
+    debug_log(f"[paragraph_submit] action={action} proposed_length={len(proposed_text)}")
 
-    context = load_paragraph_data(paper, section, paragraph)
+    debug_log("[paragraph_submit] loading paragraph data")
+    context = load_paragraph_data(REPOSITORY, paper, section, paragraph)
     current_text = context["portuguese_text"]
-    proposal = proposed_text.strip()
 
     if action == "save":
-        REPOSITORY.save_portuguese_paragraph(paper, section, paragraph, proposal)
+        debug_log("[paragraph_submit] saving paragraph")
+        REPOSITORY.save_portuguese_paragraph(paper, section, paragraph, proposed_text.strip())
         save_last_saved_paragraph(paper, section, paragraph)
-        context = load_paragraph_data(paper, section, paragraph)
+        debug_log("[paragraph_submit] reload paragraph data after save")
+        context = load_paragraph_data(REPOSITORY, paper, section, paragraph)
         current_text = context["portuguese_text"]
 
-    merge_html = merge_preview_html(current_text, proposal)
+    debug_log("[paragraph_submit] building fields")
+    fields = build_paragraph_fields(context["english"], current_text, proposed_text)
+    debug_log("[paragraph_submit] fields built")
+    view_mode_buttons = build_view_mode_buttons(paper, section, paragraph)
+    debug_log("[paragraph_submit] buttons built")
+    paragraph_status = paragraph_status_label(REPOSITORY, context["document_dir"], paper, section, paragraph)
     note_summary = REPOSITORY.summarize_notes(REPOSITORY.load_notes(context["document_dir"]))
+    debug_log(f"[paragraph_submit] paragraph_status={paragraph_status} notes={note_summary.get('count', 0)}")
 
+    debug_log("[paragraph_submit] rendering TemplateResponse")
     return TEMPLATES.TemplateResponse(
+        request,
         "paragraph.html",
         {
             "request": request,
             "paper": paper,
             "section": section,
             "paragraph": paragraph,
-            "english": context["english"],
-            "portuguese_text": current_text,
-            "proposal": proposal,
-            "merge_html": merge_html,
+            **fields,
             "portuguese_path": context["portuguese_path"],
             "document_dir": context["document_dir"],
             "document_summary": context["document_summary"],
             "previous_link": context["previous_link"],
             "next_link": context["next_link"],
+            "view_mode_buttons": view_mode_buttons,
+            "paragraph_status": paragraph_status,
             "saved": action == "save",
             "status_lines": status_label_lines(note_summary.get("status_counts", {})),
         },
     )
+
+
+@app.middleware("http")
+async def request_trace_middleware(request: Request, call_next):
+    debug_log(f"[http] --> {request.method} {request.url.path}")
+    try:
+        response = await call_next(request)
+        debug_log(f"[http] <-- {request.method} {request.url.path} {response.status_code}")
+        return response
+    except Exception as exc:
+        debug_log(f"[http] !! {request.method} {request.url.path} {type(exc).__name__}: {exc}")
+        raise
