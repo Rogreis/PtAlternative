@@ -40,8 +40,6 @@
       class="text-box current-text"
       id="dynamic-preview"
       data-current-text="{{ (portuguese_text or '') | e }}"
-      data-ai-proposed="{{ (ai_proposal or '') | e }}"
-      data-ai-comments="{{ (ai_comments or '') | e }}"
     >{{ portuguese_text or 'Parágrafo ainda vazio.' }}</div>
   </article>
 
@@ -69,8 +67,19 @@
     }
 
     const currentText = previewBox.dataset.currentText || '';
-    const aiProposedText = previewBox.dataset.aiProposed || '';
-    const aiComments = previewBox.dataset.aiComments || '';
+    let aiProposedText = '';
+    let aiComments = '';
+    let aiLoaded = false;
+    let aiLoading = false;
+
+    const paper = {{ paper }};
+    const section = {{ section }};
+    const paragraph = {{ paragraph }};
+
+    const mergeButton = modeButtons.find(b => b.dataset.viewMode === 'merge');
+    const commentsButton = modeButtons.find(b => b.dataset.viewMode === 'comments');
+    if (mergeButton) mergeButton.disabled = true;
+    if (commentsButton) commentsButton.disabled = true;
 
     let activeMode = 'current';
     let renderTimer = null;
@@ -181,9 +190,34 @@
       }, 120);
     }
 
+    async function loadAi() {
+      if (aiLoaded || aiLoading) return;
+      aiLoading = true;
+      try {
+        const response = await fetch(`/paragraph/${paper}/${section}/${paragraph}/ai`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        aiProposedText = data.translation || '';
+        aiComments = data.comments || '';
+        aiLoaded = true;
+        if (mergeButton) mergeButton.disabled = false;
+        if (commentsButton) commentsButton.disabled = false;
+        if (activeMode === 'proposed' || activeMode === 'comments') {
+          renderPreview();
+        }
+      } catch (err) {
+        console.error('AI load error:', err);
+      } finally {
+        aiLoading = false;
+      }
+    }
+
     modeButtons.forEach((button) => {
       button.addEventListener('click', () => {
         activeMode = button.dataset.viewMode || 'current';
+        if (activeMode === 'proposed') {
+          loadAi();
+        }
         renderPreview();
       });
     });

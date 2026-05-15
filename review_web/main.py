@@ -1,17 +1,17 @@
 from __future__ import annotations
 
 import json
-import logging
 import re
 from pathlib import Path
 from urllib.parse import parse_qs
 
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from review_web.paragraph_fields import build_paragraph_fields, build_view_mode_buttons, load_paragraph_data
+from review_web.log import debug_log
+from review_web.paragraph_fields import build_paragraph_fields, build_view_mode_buttons, load_paragraph_data, translate
 from scripts.repository import BookRepository
 
 
@@ -22,12 +22,6 @@ LAST_PARAGRAPH_PATH = BASE_DIR / "last_saved_paragraph.json"
 
 app = FastAPI(title="PtAlternative Review")
 app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
-logger = logging.getLogger("uvicorn.error")
-
-
-def debug_log(message: str):
-    print(message, flush=True)
-    logger.info(message)
 
 
 @app.on_event("startup")
@@ -255,6 +249,21 @@ async def paragraph_submit(
             "status_lines": status_label_lines(note_summary.get("status_counts", {})),
         },
     )
+
+
+@app.get("/paragraph/{paper}/{section}/{paragraph}/ai")
+def paragraph_ai(paper: int, section: int, paragraph: int):
+    context = load_paragraph_data(REPOSITORY, paper, section, paragraph)
+    result = translate(context["english"])
+    if "error" in result:
+        return JSONResponse(
+            content={"translation": "", "comments": result["error"]},
+            status_code=500,
+        )
+    return JSONResponse(content={
+        "translation": result.get("translation", ""),
+        "comments": result.get("comments", ""),
+    })
 
 
 @app.middleware("http")

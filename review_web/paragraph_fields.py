@@ -2,28 +2,16 @@ from __future__ import annotations
 
 import difflib
 import html
-import json
-import os
 import re
 from dataclasses import dataclass
-from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 from fastapi import HTTPException
 
 from scripts.repository import BookRepository
-
-import anthropic
-import json
-SUA_CHAVE_API="os.environ.get("ANTHROPIC_API_KEY", "")"
-client = anthropic.Anthropic(api_key=SUA_CHAVE_API)
-LOGGER = __import__("logging").getLogger("uvicorn.error")
-
-
-def debug_log(message: str):
-    print(message, flush=True)
-    LOGGER.info(message)
+from .ai_helper import AIHelper
+from .log import debug_log
 
 
 PARAGRAPH_FILENAME_PATTERN = re.compile(r"Par_(\d{3})_(\d{3})_(\d{3})\.md$")
@@ -43,93 +31,17 @@ class ParagraphLink:
         """Returns the route path to open this paragraph in the review screen."""
         return f"/paragraph/{self.paper}/{self.section}/{self.paragraph}"
 
-class AIHelper:
-    """Utility helper for AI translation calls used by the review page."""
-
-    @staticmethod
-    def _load_api_key() -> str:
-        """Loads the API key used by the AI provider from environment variables."""
-        key_file_candidates = [
-            Path("/y/home/r/.ssh/gemini.key"),
-            Path("Y:/home/r/.ssh/gemini.key"),
-            Path("\\\\wsl$\\Ubuntu\\home\\r\\.ssh\\gemini.key"),
-            Path("\\\\wsl$\\Ubuntu-22.04\\home\\r\\.ssh\\gemini.key"),
-        ]
-
-        for key_file in key_file_candidates:
-            try:
-                if key_file.exists():
-                    key_text = key_file.read_text(encoding="utf-8").strip()
-                    if key_text:
-                        return key_text.splitlines()[0].strip()
-            except OSError:
-                continue
-
-        return (
-            os.getenv("AI_API_KEY")
-            or os.getenv("OPENAI_API_KEY")
-            or os.getenv("OPENROUTER_API_KEY")
-            or ""
-        ).strip()
-
-    @staticmethod
-    def _generate_prompt() -> str:
-        """Builds the translation prompt from the English paragraph text."""
-
-        system_instruction = (
-            "You are a scholar and expert translator of The Urantia Book. "
-            "Your goal is to translate paragraphs from English to Brazilian Portuguese. "
-            "Maintain the solemn, philosophical, and elevated tone of the book. "
-            "Adhere strictly to the standard Urantia terminology in Portuguese (e.g., 'Thought Adjuster' as 'Ajustador do Pensamento'). "
-            "The output must be a valid JSON object with two fields: "
-            "'translation' (the translated text) and 'comments' (brief linguistic or terminological notes about the translation)."
-        )
-
-        return system_instruction + "\n\n"
-
-    @staticmethod
-    def translate_urantia_paragraph(english_text):
-        # Makwg the API call to the AI provider using the anthropic client
-        debug_log(f"[translate_urantia_paragraph] start english_length={len(str(english_text))}")
-
-        try:
-            message = client.messages.create(
-                model="claude-3-5-sonnet-20240620",
-                max_tokens=1500,
-                temperature=0, # Essencial para manter a consistência terminológica
-                system=AIHelper._generate_prompt(),
-                messages=[
-                    {
-                        "role": "user", 
-                        "content": f"Translate this paragraph:\n\n{english_text}"
-                    }
-                ]
-            )
-            
-            # Faz o parse do JSON retornado pela IA
-            debug_log(f"[translate_urantia_paragraph] raw_ai_text={message.content[0].text}")
-            response_data = json.loads(message.content[0].text)
-            debug_log(f"[translate_urantia_paragraph] parsed_keys={list(response_data.keys())}")
-            return response_data
-        
-        except json.JSONDecodeError:
-            debug_log("[translate_urantia_paragraph] invalid_json_response")
-            return {"error": "IA não retornou um JSON válido"}
-        except Exception as e:
-            debug_log(f"[translate_urantia_paragraph] exception={e}")
-            return {"error": str(e)}
-
-# # Exemplo de teste
-# p_eng = "The Universal Father is the God of all creation, the First Source and Center of all things and beings."
-# res = translate_urantia_paragraph(p_eng)
-
-# print(f"Tradução: {res.get('translation')}")
-# print(f"Comentários: {res.get('comments')}")
-
 
 def split_tokens(text: str):
     """Splits text preserving whitespace chunks for token-based diff rendering."""
     return re.split(r"(\s+)", text)
+
+
+def extract_english_text(english_paragraph) -> str:
+    """Extracts only the paragraph Text field expected by the translation pipeline."""
+    if isinstance(english_paragraph, dict):
+        return str(english_paragraph.get("Text", "") or "")
+    return str(english_paragraph or "")
 
 
 def merge_preview_html(base_text: str, proposed_text: str) -> str:
@@ -159,11 +71,7 @@ def merge_preview_html(base_text: str, proposed_text: str) -> str:
 def translate(english_paragraph) -> dict[str, str]:
     """Calls translate_urantia_paragraph and returns translation plus optional comments."""
     debug_log(f"[translate] start type={type(english_paragraph).__name__}")
-    english_text = (
-        english_paragraph.get("Text", "")
-        if isinstance(english_paragraph, dict)
-        else str(english_paragraph or "")
-    )
+    english_text = extract_english_text(english_paragraph)
     debug_log(f"[translate] english_length={len(english_text)}")
     if not english_text.strip():
         debug_log("[translate] empty_english_text")
@@ -184,12 +92,16 @@ def translate(english_paragraph) -> dict[str, str]:
 
 
 def generate_corrected_translation_from_ai(english) -> str:
-    """Placeholder for AI translation generation from the English paragraph text.
+    """Generates a short AI explanation by invoking the external WSL helper script."""
+    english_text = extract_english_text(english)
+    if not english_text.strip():
+        return ""
 
-    For now, it returns an empty string. In a next step, this function can call an
-    external AI model using API key, model name, and endpoint URL settings.
-    """
-    result = AIHelper.translate(english)
+    result = AIHelper.translate_urantia_paragraph(english_text)
+    if result.get("error"):
+        debug_log(f"[generate_corrected_translation_from_ai] translate_error={result['error']}")
+        return ""
+
     return result.get("translation", "")
 
 
@@ -300,22 +212,15 @@ def load_paragraph_data(repository: BookRepository, paper: int, section: int, pa
 
 def build_paragraph_fields(english, portuguese_text: str, proposed_text: str | None = None):
     """Returns template-ready field values for English text, Portuguese text, proposal and merge preview."""
-    debug_log(f"[build_paragraph_fields] start proposed_text_provided={proposed_text is not None}")
+    english_text = extract_english_text(english)
+    debug_log(f"[build_paragraph_fields] english_length={len(english_text)}")
     proposal = portuguese_text if proposed_text is None else proposed_text.strip()
-    ai_result = {"translation": "", "comments": ""}
-
-    if proposed_text is not None:
-        debug_log("[build_paragraph_fields] calling translate")
-        ai_result = translate(english)
-        debug_log(f"[build_paragraph_fields] ai_translation_length={len(ai_result.get('translation', ''))} ai_comments_length={len(ai_result.get('comments', ''))}")
-    else:
-        debug_log("[build_paragraph_fields] skipping translation on GET render")
 
     return {
         "english": english,
         "portuguese_text": portuguese_text,
         "proposal": proposal,
-        "ai_proposal": ai_result.get("translation", ""),
-        "ai_comments": ai_result.get("comments", ""),
+        "ai_proposal": "",
+        "ai_comments": "",
         "merge_html": merge_preview_html(portuguese_text, proposal),
     }
