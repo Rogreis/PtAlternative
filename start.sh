@@ -6,7 +6,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 PYTHON_BIN="$REPO_ROOT/.venv/Scripts/python.exe"
 HOST="${HOST:-127.0.0.1}"
-PORT="${PORT:-8001}"
+PORT="${PORT:-8010}"
 
 if [[ ! -x "$PYTHON_BIN" ]]; then
     echo "Python do ambiente virtual nao encontrado em: $PYTHON_BIN" >&2

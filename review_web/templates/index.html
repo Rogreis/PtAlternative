@@ -1,57 +1,139 @@
 {% extends "base.html" %}
 
-{% block title %}Dashboard - PtAlternative Review{% endblock %}
+{% block title %}PtAlternative Review{% endblock %}
+
+{% block body_class %}spa-page{% endblock %}
+
+{% block topbar %}{% endblock %}
 
 {% block content %}
-<section class="hero">
-  <div>
-    <p class="eyebrow">Revisão local</p>
-    <h1>Veja o inglês, o português atual e a proposta corrigida em uma única tela.</h1>
-    <p class="lede">Escolha um documento para abrir o primeiro parágrafo e navegar com avanços rápidos entre os trechos do livro.</p>
-  </div>
-  <div class="hero-stats">
-    <article>
-      <strong>{{ total_documents }}</strong>
-      <span>documentos</span>
-    </article>
-    <article>
-      <strong>{{ total_paragraphs }}</strong>
-      <span>arquivos de parágrafo</span>
-    </article>
-    <article>
-      <strong>{{ documents_with_notes }}</strong>
-      <span>com Notes.json</span>
-    </article>
-  </div>
-</section>
+<div class="spa-layout" id="spa-layout">
 
-<section class="panel panel-search">
-  <form method="get" action="/dashboard" class="search-form">
-    <label for="ref">Abrir Parágrafo</label>
-    <div class="search-row">
-      <input id="ref" name="ref" type="text" value="{{ reference_input }}" placeholder="D.S-P (ex.: 9.0-12)">
-      <button type="submit">Abrir</button>
+  <!-- ── Coluna esquerda ── -->
+  <div class="spa-left" id="spa-left">
+    <div class="spa-brand">
+      <span class="brand-mark">PtA</span>
+      <strong>PtAlternative</strong>
     </div>
-    <p class="search-help">Aceita apenas 3 inteiros. Separadores permitidos: espaço, ponto, vírgula, hífen ou dois-pontos.</p>
-    {% if reference_error %}
-    <p class="search-error">{{ reference_error }}</p>
+
+    <form method="get" action="/dashboard" class="search-form spa-search">
+      <label for="ref">Abrir Parágrafo</label>
+      <div class="search-row">
+        <input id="ref" name="ref" type="text" value="{{ reference_input }}"
+               placeholder="D.S-P (ex.: 9.0-12)" autocomplete="off">
+        <button type="submit">Abrir</button>
+      </div>
+      <p class="search-help">3 inteiros separados por espaço, . , - ou :</p>
+      {% if reference_error %}
+      <p class="search-error">{{ reference_error }}</p>
+      {% endif %}
+    </form>
+  </div>
+
+  <!-- ── Separador arrastável ── -->
+  <div class="spa-resizer" id="spa-resizer" title="Arrastar para redimensionar"></div>
+
+  <!-- ── Coluna direita ── -->
+  <div class="spa-right" id="spa-right">
+    {% if has_paragraph %}
+    <div id="paragraph-area">
+      {% include "paragraph_fragment.html" %}
+    </div>
+    {% else %}
+    <div id="paragraph-area">
+      <div class="doc-detail-placeholder">
+        <p>Nenhum parágrafo selecionado. Use o formulário à esquerda para abrir um.</p>
+      </div>
+    </div>
     {% endif %}
-  </form>
-</section>
+  </div>
 
-<section class="document-grid">
-  {% for doc in documents %}
-  <article class="document-card">
-    <div class="document-card-head">
-      <span class="document-code">Doc{{ '%03d'|format(doc.document_number) }}</span>
-      <span class="document-count">{{ doc.paragraph_count }} parágrafos</span>
-    </div>
-    <h2>{{ doc.title or '(sem título)' }}</h2>
-    <p>
-      Notas: {{ doc.notes_count }} · Duplicadas: {{ doc.duplicate_notes }}
-    </p>
-    <a class="card-link" href="/paragraph/{{ doc.document_number }}/0/0">Abrir revisão</a>
-  </article>
-  {% endfor %}
-</section>
+</div>
+
+<script>
+(function () {
+  /* ── Separador arrastável ── */
+  const layout  = document.getElementById('spa-layout');
+  const left    = document.getElementById('spa-left');
+  const resizer = document.getElementById('spa-resizer');
+  let resizing = false, startX = 0, startW = 0;
+
+  resizer.addEventListener('mousedown', function (e) {
+    resizing = true;
+    startX = e.clientX;
+    startW = left.getBoundingClientRect().width;
+    resizer.classList.add('is-dragging');
+    document.body.style.cursor = 'col-resize';
+    document.body.style.userSelect = 'none';
+    e.preventDefault();
+  });
+
+  document.addEventListener('mousemove', function (e) {
+    if (!resizing) return;
+    const total = layout.getBoundingClientRect().width;
+    const newW = Math.max(160, Math.min(total * 0.72, startW + (e.clientX - startX)));
+    left.style.width = newW + 'px';
+  });
+
+  document.addEventListener('mouseup', function () {
+    if (!resizing) return;
+    resizing = false;
+    resizer.classList.remove('is-dragging');
+    document.body.style.cursor = '';
+    document.body.style.userSelect = '';
+  });
+
+  /* ── SPA fetch ── */
+  const form     = document.querySelector('.search-form');
+  const area     = document.getElementById('paragraph-area');
+  const refInput = document.getElementById('ref');
+
+  function executeScripts(container) {
+    container.querySelectorAll('script').forEach(function (old) {
+      const s = document.createElement('script');
+      Array.from(old.attributes).forEach(function (a) { s.setAttribute(a.name, a.value); });
+      s.textContent = old.textContent;
+      old.parentNode.replaceChild(s, old);
+    });
+  }
+
+  async function loadRef(ref) {
+    area.innerHTML = '<div class="doc-detail-loading">Carregando\u2026</div>';
+    try {
+      const response = await fetch('/dashboard/fragment?ref=' + encodeURIComponent(ref));
+      const html = await response.text();
+      area.innerHTML = html;
+      executeScripts(area);
+    } catch (err) {
+      area.innerHTML = '<div class="doc-detail-error">Erro ao carregar: ' + err.message + '</div>';
+    }
+    history.pushState(null, '', '/dashboard?ref=' + encodeURIComponent(ref));
+    if (refInput) refInput.value = ref;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const ref = (refInput ? refInput.value : '').trim();
+    if (ref) loadRef(ref);
+  });
+
+  area.addEventListener('click', function (e) {
+    const link = e.target.closest('a[href*="/dashboard?ref="]');
+    if (!link) return;
+    e.preventDefault();
+    const match = link.href.match(/[?&]ref=([^&]+)/);
+    if (match) loadRef(decodeURIComponent(match[1]));
+  });
+
+  window.addEventListener('popstate', function () {
+    const ref = new URLSearchParams(window.location.search).get('ref');
+    if (ref) {
+      loadRef(ref);
+    } else {
+      area.innerHTML = '<div class="doc-detail-placeholder"><p>Nenhum par\u00e1grafo selecionado. Use o formul\u00e1rio \u00e0 esquerda para abrir um.</p></div>';
+      if (refInput) refInput.value = '';
+    }
+  });
+})();
+</script>
 {% endblock %}

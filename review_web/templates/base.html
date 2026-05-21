@@ -6,8 +6,9 @@
   <title>{% block title %}PtAlternative Review{% endblock %}</title>
   <link rel="stylesheet" href="/static/styles.css">
 </head>
-<body>
+<body class="{% block body_class %}{% endblock %}">
   <div class="page-shell">
+    {% block topbar %}
     <header class="topbar">
       <a class="brand" href="/dashboard">
         <span class="brand-mark">PtA</span>
@@ -21,6 +22,7 @@
         <a href="/paragraph/0/0/0">Abrir início</a>
       </nav>
     </header>
+    {% endblock %}
 
     <main class="content">
       {% block content %}{% endblock %}

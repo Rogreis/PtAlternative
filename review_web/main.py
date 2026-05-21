@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 from urllib.parse import parse_qs
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -125,29 +125,110 @@ def dashboard(request: Request, ref: str | None = None):
     debug_log(f"[dashboard] summaries_loaded={len(summaries)}")
     reference_input = (ref or "").strip()
     reference_error = ""
+    paragraph_context: dict = {}
 
+    # Determine which paragraph to display
+    target: tuple[int, int, int] | None = None
     if reference_input:
         parsed_reference = parse_paragraph_reference(reference_input)
         if parsed_reference is not None:
-            paper, section, paragraph = parsed_reference
-            debug_log(f"[dashboard] redirecting to paragraph {paper}/{section}/{paragraph}")
-            return RedirectResponse(url=f"/paragraph/{paper}/{section}/{paragraph}", status_code=303)
-        reference_error = "Use exatamente 3 inteiros no formato D.S-P, separados por espaço, . , - ou : (ex.: 9.0-12)."
+            target = parsed_reference
+        else:
+            reference_error = "Use exatamente 3 inteiros no formato D.S-P, separados por espaço, . , - ou : (ex.: 9.0-12)."
 
-    total_documents = len(REPOSITORY.summarize_documents())
-    total_paragraphs = sum(item["paragraph_count"] for item in REPOSITORY.summarize_documents())
+    if target is None and not reference_error:
+        target = load_last_saved_paragraph()
+
+    if target is not None:
+        paper, section, paragraph = target
+        debug_log(f"[dashboard] loading paragraph {paper}/{section}/{paragraph}")
+        try:
+            ctx = load_paragraph_data(REPOSITORY, paper, section, paragraph)
+            fields = build_paragraph_fields(ctx["english"], ctx["portuguese_text"])
+            view_mode_buttons = build_view_mode_buttons(paper, section, paragraph)
+            par_status = paragraph_status_label(REPOSITORY, ctx["document_dir"], paper, section, paragraph)
+            paragraph_context = {
+                "paper": paper,
+                "section": section,
+                "paragraph": paragraph,
+                **fields,
+                "portuguese_path": ctx["portuguese_path"],
+                "document_dir": ctx["document_dir"],
+                "document_summary": ctx["document_summary"],
+                "previous_link": ctx["previous_link"],
+                "next_link": ctx["next_link"],
+                "view_mode_buttons": view_mode_buttons,
+                "paragraph_status": par_status,
+                "saved": False,
+                "status_lines": status_label_lines(
+                    REPOSITORY.summarize_notes(
+                        REPOSITORY.load_notes(ctx["document_dir"])
+                    ).get("status_counts", {})
+                ),
+            }
+        except HTTPException:
+            reference_error = "Parágrafo não encontrado."
+
+    total_documents = len(summaries)
+    total_paragraphs = sum(item["paragraph_count"] for item in summaries)
 
     return TEMPLATES.TemplateResponse(
         request,
         "index.html",
         {
             "request": request,
-            "documents": summaries,
             "reference_input": reference_input,
             "reference_error": reference_error,
             "total_documents": total_documents,
             "total_paragraphs": total_paragraphs,
             "documents_with_notes": sum(1 for item in summaries if item["notes_present"]),
+            "has_paragraph": bool(paragraph_context),
+            **paragraph_context,
+        },
+    )
+
+
+@app.get("/dashboard/fragment", response_class=HTMLResponse)
+def dashboard_fragment(request: Request, ref: str | None = None):
+    reference_input = (ref or "").strip()
+    if not reference_input:
+        return HTMLResponse('<div class="doc-detail-placeholder"><p>Nenhum parágrafo selecionado.</p></div>')
+
+    parsed = parse_paragraph_reference(reference_input)
+    if parsed is None:
+        return HTMLResponse('<p class="search-error">Use exatamente 3 inteiros no formato D.S-P (ex.: 9.0-12).</p>')
+
+    paper, section, paragraph = parsed
+    try:
+        ctx = load_paragraph_data(REPOSITORY, paper, section, paragraph)
+    except HTTPException:
+        return HTMLResponse('<p class="search-error">Parágrafo não encontrado.</p>')
+
+    fields = build_paragraph_fields(ctx["english"], ctx["portuguese_text"])
+    view_mode_buttons = build_view_mode_buttons(paper, section, paragraph)
+    par_status = paragraph_status_label(REPOSITORY, ctx["document_dir"], paper, section, paragraph)
+    return TEMPLATES.TemplateResponse(
+        request,
+        "paragraph_fragment.html",
+        {
+            "request": request,
+            "paper": paper,
+            "section": section,
+            "paragraph": paragraph,
+            **fields,
+            "portuguese_path": ctx["portuguese_path"],
+            "document_dir": ctx["document_dir"],
+            "document_summary": ctx["document_summary"],
+            "previous_link": ctx["previous_link"],
+            "next_link": ctx["next_link"],
+            "view_mode_buttons": view_mode_buttons,
+            "paragraph_status": par_status,
+            "saved": False,
+            "status_lines": status_label_lines(
+                REPOSITORY.summarize_notes(
+                    REPOSITORY.load_notes(ctx["document_dir"])
+                ).get("status_counts", {})
+            ),
         },
     )
 
@@ -247,6 +328,35 @@ async def paragraph_submit(
             "paragraph_status": paragraph_status,
             "saved": action == "save",
             "status_lines": status_label_lines(note_summary.get("status_counts", {})),
+        },
+    )
+
+
+@app.get("/paragraph/{paper}/{section}/{paragraph}/fragment", response_class=HTMLResponse)
+def paragraph_fragment(request: Request, paper: int, section: int, paragraph: int):
+    debug_log(f"[paragraph_fragment] start paper={paper} section={section} paragraph={paragraph}")
+    context = load_paragraph_data(REPOSITORY, paper, section, paragraph)
+    fields = build_paragraph_fields(context["english"], context["portuguese_text"])
+    view_mode_buttons = build_view_mode_buttons(paper, section, paragraph)
+    paragraph_status = paragraph_status_label(REPOSITORY, context["document_dir"], paper, section, paragraph)
+    return TEMPLATES.TemplateResponse(
+        request,
+        "paragraph_fragment.html",
+        {
+            "request": request,
+            "paper": paper,
+            "section": section,
+            "paragraph": paragraph,
+            **fields,
+            "portuguese_path": context["portuguese_path"],
+            "document_dir": context["document_dir"],
+            "document_summary": context["document_summary"],
+            "previous_link": context["previous_link"],
+            "next_link": context["next_link"],
+            "view_mode_buttons": view_mode_buttons,
+            "paragraph_status": paragraph_status,
+            "saved": False,
+            "status_lines": status_label_lines(REPOSITORY.summarize_notes(REPOSITORY.load_notes(context["document_dir"])).get("status_counts", {})),
         },
     )
 
