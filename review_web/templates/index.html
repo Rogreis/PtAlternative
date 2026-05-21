@@ -28,6 +28,20 @@
       <p class="search-error">{{ reference_error }}</p>
       {% endif %}
     </form>
+
+    <div id="spa-nav">
+      {% if has_paragraph %}
+      <p class="spa-para-title">Doc{{ '%03d'|format(paper) }} · Seção {{ section }} · Parágrafo {{ paragraph }}</p>
+      <div class="spa-nav-buttons">
+        {% if previous_link %}
+        <a class="ghost-button" href="/dashboard?ref={{ previous_link.paper }}.{{ previous_link.section }}.{{ previous_link.paragraph }}">← Anterior</a>
+        {% endif %}
+        {% if next_link %}
+        <a class="ghost-button" href="/dashboard?ref={{ next_link.paper }}.{{ next_link.section }}.{{ next_link.paragraph }}">Próximo →</a>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
   </div>
 
   <!-- ── Separador arrastável ── -->
@@ -104,6 +118,11 @@
       const html = await response.text();
       area.innerHTML = html;
       executeScripts(area);
+      const inject = area.querySelector('#spa-left-inject');
+      if (inject) {
+        document.getElementById('spa-nav').innerHTML = inject.innerHTML;
+        inject.remove();
+      }
     } catch (err) {
       area.innerHTML = '<div class="doc-detail-error">Erro ao carregar: ' + err.message + '</div>';
     }
@@ -117,13 +136,16 @@
     if (ref) loadRef(ref);
   });
 
-  area.addEventListener('click', function (e) {
+  function handleNavClick(e) {
     const link = e.target.closest('a[href*="/dashboard?ref="]');
     if (!link) return;
     e.preventDefault();
     const match = link.href.match(/[?&]ref=([^&]+)/);
     if (match) loadRef(decodeURIComponent(match[1]));
-  });
+  }
+
+  area.addEventListener('click', handleNavClick);
+  document.getElementById('spa-nav').addEventListener('click', handleNavClick);
 
   window.addEventListener('popstate', function () {
     const ref = new URLSearchParams(window.location.search).get('ref');

@@ -209,7 +209,7 @@ button:hover {
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 14px 16px;
-  font: inherit;
+  font-size: inherit;
   background: #252525;
   color: var(--ink);
 }
@@ -374,6 +374,15 @@ button:hover {
   grid-column: span 2;
 }
 
+/* Fonte de trabalho: usada em todos os painéis de texto de revisão
+   (texto em inglês, texto atual/merge e textarea de proposta).
+   Usa fonte sem serifa para facilitar a leitura durante a edição. */
+.work-text {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 28px;
+}
+
 .text-box,
 .merge-box {
   margin-top: 14px;
@@ -382,7 +391,6 @@ button:hover {
   border: 1px solid var(--border);
   background: #252525;
   white-space: pre-wrap;
-  line-height: 1.75;
   min-height: 180px;
 }
 
@@ -598,6 +606,26 @@ button:hover {
   border: none;
   padding: 0;
   box-shadow: none;
+}
+
+.spa-para-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.spa-nav-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.spa-nav-buttons .ghost-button {
+  font-size: 0.82rem;
+  padding: 7px 12px;
 }
 
 .spa-resizer {

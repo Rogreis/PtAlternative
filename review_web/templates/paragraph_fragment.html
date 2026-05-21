@@ -1,23 +1,19 @@
-<section class="paragraph-toolbar">
-  <div>
-    <h1>Doc{{ '%03d'|format(paper) }} · Seção {{ section }} · Parágrafo {{ paragraph }}</h1>
-    <p class="lede">{{ portuguese_path }}</p>
-  </div>
-  <div class="toolbar-links">
+<div id="spa-left-inject" hidden>
+  <p class="spa-para-title">Doc{{ '%03d'|format(paper) }} · Seção {{ section }} · Parágrafo {{ paragraph }}</p>
+  <div class="spa-nav-buttons">
     {% if previous_link %}
     <a class="ghost-button" href="/dashboard?ref={{ previous_link.paper }}.{{ previous_link.section }}.{{ previous_link.paragraph }}">← Anterior</a>
     {% endif %}
     {% if next_link %}
     <a class="ghost-button" href="/dashboard?ref={{ next_link.paper }}.{{ next_link.section }}.{{ next_link.paragraph }}">Próximo →</a>
     {% endif %}
-    <a class="ghost-button" href="/paragraph/{{ paper }}/{{ section }}/{{ paragraph }}" target="_blank" rel="noopener">Página completa ↗</a>
   </div>
-</section>
+</div>
 
 <section class="review-layout">
   <article class="review-panel">
     <h2>Texto em inglês</h2>
-    <div class="text-box source-text">{{ english.Text }}</div>
+    <div class="text-box source-text work-text">{{ english.Text }}</div>
   </article>
 
   <article class="review-panel" id="panel-current">
@@ -32,7 +28,7 @@
       {% endfor %}
     </div>
     <div
-      class="text-box current-text"
+      class="text-box current-text work-text"
       id="dynamic-preview"
       data-current-text="{{ (portuguese_text or '') | e }}"
     >{{ portuguese_text or 'Parágrafo ainda vazio.' }}</div>
@@ -42,7 +38,7 @@
     <h2>Tradução corrigida <span class="inline-status">Status: {{ paragraph_status }}</span></h2>
     <form method="post" action="/paragraph/{{ paper }}/{{ section }}/{{ paragraph }}" class="review-form">
       <input type="hidden" name="action" value="preview" id="action-field">
-      <textarea name="proposed_text" rows="14" spellcheck="true">{{ proposal }}</textarea>
+      <textarea name="proposed_text" rows="14" spellcheck="true" class="work-text">{{ proposal }}</textarea>
       <div class="form-actions">
         <button type="submit" onclick="document.getElementById('action-field').value='preview'">Pré-visualizar</button>
         <button type="submit" class="primary" onclick="document.getElementById('action-field').value='save'">Salvar revisão</button>
